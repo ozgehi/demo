@@ -32,11 +32,7 @@ public class FriendController {
         else
             throw new ValidationException("Request not completed!");
     }
-    @ResponseStatus(HttpStatus.BAD_REQUEST)
-    @ExceptionHandler
-    ErrorMessage errorMessage(ValidationException e){
-        return new ErrorMessage("401", e.getMessage());
-    }
+
 
     @DeleteMapping("/friend/{id}")
     void delete(@PathVariable Integer id) {
